@@ -20,20 +20,22 @@ Pokud používáš MacOS, tak si můžeš jednoduše nainstalovat Git i Lilypond
 V terminálu spusť příkaz:
 
 ```sh
-$ lilypond Valašský\ pochod.ly
+$ lilypond transpozice.ly
 ```
 
-Pokud je vše bez bych tak uvidíš následující výstup a soubor `Valašský pochod.pdf` bude připraven k tisku.
+Pokud je vše bez bych tak uvidíš následující výstup a soubor `transpozice.pdf` bude připraven k tisku.
 
 ```
 GNU LilyPond 2.22.2 (running Guile 2.2)
-Processing `Valašský pochod.ly'
+Processing `transpozice.ly'
 Parsing...
+Interpreting music...[8]
+Preprocessing graphical objects...
 Interpreting music...[8]
 Preprocessing graphical objects...
 Finding the ideal number of pages...
 Fitting music on 1 page...
 Drawing systems...
-Converting to `Valašský pochod.pdf'...
+Converting to `transpozice.pdf'...
 Success: compilation successfully completed
 ```
