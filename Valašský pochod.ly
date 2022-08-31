@@ -91,7 +91,7 @@ clarinet_B_PodNavojnym = {
 \score{
     \header {
         piece = "Valašský pochod"
-        % opus = "Flétna"
+        opus = "Flétna"
     }
     \new Staff {
         \clef "treble"
@@ -106,14 +106,22 @@ clarinet_B_PodNavojnym = {
 \score{
     \header {
         piece = "Pod Návojným"
-        % opus = "Piccolo"
+        opus = "Piccolo"
     }
     \new Staff {
         \clef "treble"
         \time 2/4 
         \set Score.markFormatter = #format-mark-box-alphabet
+        \set Score.currentBarNumber = #21
+
         \transpose c' bes {
             \clarinet_B_PodNavojnym
+        }
+    }
+    \layout {
+        \context {
+            \Score
+            \consists "Bar_number_engraver"
         }
     }
 }
