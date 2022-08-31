@@ -1,6 +1,10 @@
 \version "2.22.2"
 
-clarinet_B = {
+% =====================================
+%           Valašský Pochod
+% =====================================
+
+clarinet_B_ValasskyPochod = {
     \key a \major
     
     % Partial takt je tu proto, aby se zobrazila první dvojčára
@@ -29,6 +33,37 @@ clarinet_B = {
 
     \mark \default
     \bar "||"
+}
+
+% =====================================
+%             Pod Návojným
+% =====================================
+
+clarinet_B_PodNavojnym = {
+    \key g \major
+
+    % Partial takt je tu proto, aby se zobrazila první dvojčára
+    \partial 64
+    \once \hideNotes c64
+
+    \mark #3
+    \bar "||"
+
+    \transpose c c'' {
+
+        g8 b d' d' | d' c' b d' | d' c' c' c' |
+        b4 g | f4 r |
+
+        \break
+
+        d'8 c' c' c' | \repeat percent 2 { b a b c' | }
+        b4 a | g r |
+
+    }
+
+    \mark \default
+    \bar "||"
+
 }
 
 \layout {
@@ -63,7 +98,22 @@ clarinet_B = {
         \time 2/4 
         \set Score.markFormatter = #format-mark-circle-numbers
         \transpose c' bes {
-            \clarinet_B
+            \clarinet_B_ValasskyPochod
+        }
+    }
+}
+
+\score{
+    \header {
+        piece = "Pod Návojným"
+        % opus = "Piccolo"
+    }
+    \new Staff {
+        \clef "treble"
+        \time 2/4 
+        \set Score.markFormatter = #format-mark-box-alphabet
+        \transpose c' bes {
+            \clarinet_B_PodNavojnym
         }
     }
 }
